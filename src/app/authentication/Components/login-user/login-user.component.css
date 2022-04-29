@@ -1,0 +1,41 @@
+.main-div{
+    text-align: center;
+    top: 12%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid rgb(243, 242, 242);
+}
+img{
+    max-height: 100px;
+    max-width: 50%;
+    padding-top: 3%;
+}
+form{
+    padding-top: 3%;
+}
+.links-css{
+    padding-top: 25%;
+    text-decoration: none;
+}
+.mat-raised-button {
+    background-color: rgb(9 215 9);
+    color: white;
+    max-width: 100px;
+    min-width: 150px;
+    width: 10%;
+    border-radius: 25px;
+}
+.color{
+    color: grey;
+    left: 50%;
+    transform: translateX(-10%);
+}
+a{
+    color: rgb(1, 203, 1);
+}
+mat-form-field{
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+}
