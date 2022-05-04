@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-user',
@@ -7,19 +9,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login-user.component.css']
 })
 export class LoginUserComponent implements OnInit {
-  heading:string = "Welcome";
-  hide:boolean=true
-  loginUser!:FormGroup;
-  constructor(private fb:FormBuilder) {
+  heading: string = "Welcome";
+  hide: boolean = true
+  loginUser: FormGroup;
+  
+  constructor(private fb: FormBuilder, public router: Router, private toastr: ToastrService) {
     this.loginUser = this.fb.group({
-      Username : ['',Validators.required],
-      password : ['',Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     })
-   }
+  }
 
   ngOnInit(): void {
   }
-  createNewTask(){
-    
+  createNewTask() {
+    const data = this.loginUser.value
+    if (data.username == 'test' && data.password == 'test') {
+      this.router.navigate(['/dashboard'])
+      this.toastr.success('Login Successfully');
+    }
   }
 }

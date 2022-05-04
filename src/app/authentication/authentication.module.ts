@@ -6,6 +6,7 @@ import { LoginUserComponent } from './Components/login-user/login-user.component
 import { SignupUserComponent } from './Components/signup-user/signup-user.component';
 import { ForgetComponent } from './Components/forget/forget.component';
 import { UiComponentModule } from '../ui-component/ui-component.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { UiComponentModule } from '../ui-component/ui-component.module';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    UiComponentModule
+    UiComponentModule,
+    SharedModule
   ]
 })
 export class AuthenticationModule { }

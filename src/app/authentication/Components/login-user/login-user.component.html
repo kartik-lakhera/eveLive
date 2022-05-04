@@ -3,14 +3,11 @@
 
   <img src="../../../../assets/img/logos/loginLogo.jfif">
   <form [formGroup]="loginUser" (submit)="createNewTask()">
-
     <mat-form-field appearance="legacy">
       <mat-label>Username</mat-label>
-      <input matInput placeholder="Username" formControlName="Username" maxlength="15">
+      <input matInput placeholder="Username" formControlName="username" maxlength="15">
     </mat-form-field>
-    <!-- <mat-icon>perm_identity</mat-icon> -->
-    <div
-      *ngIf="loginUser.get('Username')?.invalid && loginUser.get('Username')?.dirty || loginUser.get('Username')?.touched">
+    <div *ngIf="loginUser.get('username')?.invalid && loginUser.get('username')?.touched">
       <span>
         <b>Username is required*</b>`
       </span>
@@ -20,20 +17,18 @@
       <mat-label>Password</mat-label>
       <input matInput placeholder="Password" formControlName="password" maxlength="15"
         [type]="hide ? 'password' : 'text'">
-        
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-      <div
-      *ngIf="loginUser.get('password')?.invalid && loginUser.get('password')?.dirty || loginUser.get('password')?.touched">
+    <div *ngIf="loginUser.get('password')?.invalid && loginUser.get('password')?.touched">
       <span>
         <b>Password is required*</b>
       </span>
     </div>
     <br>
-    <button mat-raised-button>LOGIN</button>
+    <button mat-raised-button [disabled]="!loginUser.valid">LOGIN</button>
     <br>
     <ul style="list-style-type:disc" class="links-css">
       <li class="color">Forget <a [routerLink]="['/forget']">Username/Password?</a></li>
