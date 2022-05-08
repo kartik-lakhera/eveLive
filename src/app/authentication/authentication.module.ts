@@ -7,7 +7,7 @@ import { SignupUserComponent } from './Components/signup-user/signup-user.compon
 import { ForgetComponent } from './Components/forget/forget.component';
 import { UiComponentModule } from '../ui-component/ui-component.module';
 import { SharedModule } from '../shared/shared.module';
-
+import { FeaturesModule } from '../features/features.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     AuthenticationRoutingModule,
     UiComponentModule,
-    SharedModule
+    SharedModule,
+    FeaturesModule
   ]
 })
 export class AuthenticationModule { }

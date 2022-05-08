@@ -13,13 +13,13 @@ import { UiComponentModule } from '../ui-component/ui-component.module';
     FooterComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UiComponentModule
   ],
   exports:[
     HeaderComponent,
     MainLayoutComponent,
     FooterComponent,
-    UiComponentModule
   ]
 })
 export class SharedModule { }

@@ -24,9 +24,11 @@ export class LoginUserComponent implements OnInit {
   }
   createNewTask() {
     const data = this.loginUser.value
-    if (data.username == 'test' && data.password == 'test') {
+    if (data.username == 'test' && data.password == 'test1') {
       this.router.navigate(['/dashboard'])
-      this.toastr.success('Login Successfully');
+      this.toastr.success('Login Successfully!');
+    }else{
+      this.toastr.error('Wrong credential!')
     }
   }
 }

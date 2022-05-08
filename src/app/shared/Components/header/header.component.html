@@ -1,1 +1,28 @@
-<p>header works!</p>
+<p class="main">
+    <mat-toolbar>
+        <button mat-icon-button>
+        </button>
+        <span><img src="../../../../assets/img/logos/loginLogo.jfif" id="img"></span>
+        <span class="example-spacer"></span>
+
+        <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>supervised_user_circle</mat-icon>
+                <span>My Profile</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon> transit_enterexit</mat-icon>
+                <span>Log-out</span>
+            </button>
+        </mat-menu>
+
+        <mat-form-field appearance="legacy" class="searchBar">
+            <input matInput placeholder="Placeholder" type="text" name="search" [(ngModel)]="searchText"
+                autocomplete="off" placeholder="Search">
+        </mat-form-field>
+
+    </mat-toolbar>
+</p>
